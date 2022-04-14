@@ -26,7 +26,7 @@ sp            = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope, client_id
 def main():
     # get csvs inside current directory
     # may need to change path in listdir() if different directory
-    directory = os.listdir()
+    directory = os.listdir("../data/playlists")
     csvs      = [elem for elem in directory if ".csv" in elem]
     counter   = 0
     # skips updates of current lists (I got lost of timeouts when running script due to high volumne of querries)
@@ -46,7 +46,7 @@ def main():
         print ("Queued to generate tracks for", csv)
     for csv in csvs:
         print("generating features and tracks for  ", csv)
-        playlist_df              = pd.read_csv(csv)
+        playlist_df              = pd.read_csv(f"../data/playlists/{csv}")
         total_tracklist          = []
         total_tracklist_features = []
 

@@ -28,19 +28,18 @@ def main():
     # may need to change path in listdir() if different directory
     directory = os.listdir("../data/playlists")
     csvs      = [elem for elem in directory if ".csv" in elem]
-    counter   = 0
+
+    already_generated_csvs = os.listdir('../data/audio_features')
+    csvs_completed = [elem for elem in already_generated_csvs if ".csv" in elem]
     # skips updates of current lists (I got lost of timeouts when running script due to high volumne of querries)
-    while counter < len(csvs):
-        if csvs[counter][:6] == "tracks":
-            strtodel   = csvs[counter][7:]
-            subcounter = 0
-            while subcounter < len(csvs):
-                if strtodel in csvs[subcounter]:
-                    del csvs[subcounter]
-                    subcounter -= 1
-                    counter    -= 1
-                subcounter += 1
-        counter += 1
+    for i in range(len(csvs_completed)):
+        counter   = 0
+        while counter < len(csvs):
+            if csvs[counter] == csvs_completed[i][9:]:
+                print(csvs[counter])
+                del csvs[counter]
+                counter -= 1
+            counter += 1
 
     for csv in csvs:
         print ("Queued to generate tracks for", csv)

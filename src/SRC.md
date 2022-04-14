@@ -14,6 +14,4 @@ Please also note when running tracklist_generator.py, some playlists are very la
 
 To avoid this, I've added dynamic restarting controls so if the script exit, the next run will only download missing files.
 
-Please increase the time out by heading to Spotipy's Client.py file and increasing it directly. I was able to run the script
-
-without any interruptions with a time out of 40 seconds. 
+Please increase the time out by heading to Spotipy's Client.py file and increasing it directly. I was able to run the script without any interruptions with a time out of 40 seconds. 

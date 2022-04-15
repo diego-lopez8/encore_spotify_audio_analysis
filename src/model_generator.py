@@ -5,13 +5,10 @@ Date: 04/05/2022
 This file contains the code to generate and pickle models used in analysis. 
 The purpose of this is to be able to run models on cloud and not have to keep a jupyter server open. 
 Note that all these set to use max cores available, please adjust if using on local machine. 
-
 """
-
 
 import pandas as pd
 import numpy as np
-import os
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression, LogisticRegressionCV
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier, GradientBoostingClassifier

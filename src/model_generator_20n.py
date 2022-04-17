@@ -1,5 +1,5 @@
 """
-model_generator_10n.py
+model_generator_20n.py
 Author: Diego Lopez
 Date: 04/05/2022
 This file contains the code to generate and pickle models used in analysis. 
